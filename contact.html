@@ -1,98 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connect | LUXÉ Modern Beauty</title>
+
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #fffaf7; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-    .header-blur { background: rgba(255, 250, 247, 0.4); backdrop-filter: blur(25px) saturate(180%); -webkit-backdrop-filter: blur(25px) saturate(180%); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-    .glass { background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.7); }
-    input, textarea, select { background: transparent !important; border-bottom: 1px solid rgba(0,0,0,0.1) !important; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; }
-    input:focus { border-color: #c89b6a !important; outline: none; }
-  </style>
+
 </head>
+
 <body class="antialiased min-h-screen flex flex-col">
 
-<nav class="fixed w-full z-[100] px-6 py-5">
-  <div class="max-w-7xl mx-auto flex justify-between items-center header-blur px-10 py-4 rounded-full shadow-lg">
-    <a href="index.html" class="font-serif text-2xl font-bold tracking-tighter">LUXÉ<span class="text-[#c89b6a]">.</span></a>
-    <div class="hidden md:flex gap-12 text-[11px] font-semibold uppercase tracking-[0.3em]">
-      <a href="about.html" class="hover:text-[#c89b6a] transition">Philosophy</a>
-      <a href="services.html" class="hover:text-[#c89b6a] transition">Rituals</a>
-      <a href="contact.html" class="text-[#c89b6a]">Contact</a>
-    </div>
-    <a href="#contact" class="bg-black text-white px-8 py-2.5 rounded-full text-[10px] uppercase tracking-widest">Reserve</a>
-  </div>
-</nav>
+  <nav id="main-nav" class="fixed w-full z-50 px-4 md:px-6 py-6 transition-all duration-500">
+    <div class="max-w-7xl mx-auto glass-card px-6 md:px-10 py-4 rounded-full border border-white/20 shadow-sm">
+      <div class="flex justify-between items-center">
 
-<main class="flex-grow pt-40 pb-20 px-6">
-    <div class="max-w-7xl mx-auto">
-        <div class="glass rounded-[4rem] overflow-hidden grid lg:grid-cols-12 shadow-3xl">
-            
-            <div class="lg:col-span-5 bg-black text-white p-12 md:p-24 flex flex-col justify-between">
-                <div>
-                    <h1 class="font-serif text-5xl md:text-7xl italic leading-tight mb-12">Connect <br>With Us</h1>
-                    <div class="space-y-12">
-                        <div>
-                            <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Location</p>
-                            <p class="font-serif text-xl italic">122 Luxury Avenue, Suite 10, <br>Kochi, Kerala</p>
-                        </div>
-                        <div>
-                            <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Inquiries</p>
-                            <p class="font-serif text-xl italic">hello@luxestudio.com <br>+91 98765 43210</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-20 flex gap-6 grayscale opacity-50">
-                    <a href="#" class="text-[10px] uppercase tracking-widest">Instagram</a>
-                    <a href="#" class="text-[10px] uppercase tracking-widest">Journal</a>
-                </div>
-            </div>
+        <span class="font-serif text-2xl font-bold tracking-tighter">
+          <a href="#">OLAY</a><span class="text-[#c89b6a]">.</span>
+        </span>
 
-            <div class="lg:col-span-7 p-12 md:p-24 flex flex-col justify-center">
-                <form class="space-y-12">
-                    <div class="grid md:grid-cols-2 gap-12">
-                        <div class="flex flex-col">
-                            <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Full Name</label>
-                            <input type="text" placeholder="Your Name" class="pb-3">
-                        </div>
-                        <div class="flex flex-col">
-                            <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Email</label>
-                            <input type="email" placeholder="email@address.com" class="pb-3">
-                        </div>
-                    </div>
-                    <div class="flex flex-col">
-                        <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Service of Interest</label>
-                        <select class="pb-3">
-                            <option>Bridal Ritual</option>
-                            <option>Skin Sculpting</option>
-                            <option>Hair Artistry</option>
-                            <option>Global Color</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-col">
-                        <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Your Message</label>
-                        <textarea rows="3" placeholder="Tell us about your needs..." class="pb-3"></textarea>
-                    </div>
-                    <button class="bg-black text-white px-12 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] hover:bg-[#c89b6a] transition-all duration-500 w-full lg:w-max">
-                        Send Reservation Request
-                    </button>
-                </form>
-            </div>
+        <div class="hidden md:flex gap-10 text-[11px] font-semibold uppercase tracking-[0.2em]">
+          <a href="index.html" class="hover:text-[#c89b6a] transition">Home</a>
+          <a href="about.html" class="hover:text-[#c89b6a] transition">About</a>
+          <a href="service.html" class="hover:text-[#c89b6a] transition">Services</a>
+          <a href="contact.html" class="hover:text-[#c89b6a] transition">Contact</a>
         </div>
+
+        <a href="#contact"
+          class="hidden md:inline-block bg-black text-white px-7 py-2.5 rounded-full text-[10px] uppercase tracking-widest hover:bg-[#c89b6a] transition shadow-lg">
+          Book Appointment
+        </a>
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu"
+        class="hidden md:hidden mt-6 bg-white rounded-2xl p-8 shadow-2xl space-y-6 text-center uppercase tracking-widest text-xs font-medium border border-gray-100">
+        <a href="index.html" class="block py-2 border-b border-gray-50">Home</a>
+        <a href="about.html" class="block py-2 border-b border-gray-50">About</a>
+        <a href="service.html" class="block py-2 border-b border-gray-50">Services</a>
+        <a href="contact.html" class="block py-2 border-b border-gray-50">Contact</a>
+        <a href="#contact" class="inline-block bg-black text-white px-10 py-4 rounded-full w-full">Book Now</a>
+      </div>
     </div>
-</main>
+  </nav>
 
-<footer class="py-12 text-center bg-transparent">
-    <p class="font-serif text-2xl font-bold tracking-tighter">LUXÉ<span class="text-[#c89b6a]">.</span></p>
-</footer>
+  <main class="flex-grow pt-40 pb-20 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="glass rounded-[4rem] overflow-hidden grid lg:grid-cols-12 shadow-3xl">
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ once: true, duration: 1200 });</script>
+        <div class="lg:col-span-5 bg-black text-white p-12 md:p-24 flex flex-col justify-between">
+          <div>
+            <h1 class="font-serif text-5xl md:text-7xl italic leading-tight mb-12">Connect <br>With Us</h1>
+            <div class="space-y-12">
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Location</p>
+                <p class="font-serif text-xl italic">884Q+R4M Kadicheeni Complex, Main Rd, North Chalakudy,<br>
+                  Chalakudy, Kerala 680307</p>
+              </div>
+              <div>
+                <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-2">Inquiries</p>
+                <p class="font-serif text-xl italic">hello@luxestudio.com <br>0480 270 3735</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-20 flex gap-6 grayscale opacity-50">
+            <a href="#" class="text-[10px] uppercase tracking-widest">Instagram</a>
+            <a href="#" class="text-[10px] uppercase tracking-widest">Journal</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-12 md:p-24 flex flex-col justify-center">
+          <form class="space-y-12">
+            <div class="grid md:grid-cols-2 gap-12">
+              <div class="flex flex-col">
+                <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Full Name</label>
+                <input type="text" placeholder="Your Name" class="pb-3">
+              </div>
+              <div class="flex flex-col">
+                <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Email</label>
+                <input type="email" placeholder="email@address.com" class="pb-3">
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Service of Interest</label>
+              <select class="pb-3">
+                <option>Bridal Ritual</option>
+                <option>Skin Sculpting</option>
+                <option>Hair Artistry</option>
+                <option>Global Color</option>
+              </select>
+            </div>
+            <div class="flex flex-col">
+              <label class="text-[9px] uppercase tracking-[0.3em] text-gray-400 mb-2">Your Message</label>
+              <textarea rows="3" placeholder="Tell us about your needs..." class="pb-3"></textarea>
+            </div>
+            <button
+              class="bg-black text-white px-12 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] hover:bg-[#c89b6a] transition-all duration-500 w-full lg:w-max">
+              Send Reservation Request
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MAP SECTION -->
+  <section class="px-6 pb-32">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="glass rounded-[4rem] overflow-hidden shadow-2xl" data-aos="fade-up">
+
+        <!-- Section Header -->
+        <div class="text-center py-16">
+          <p class="text-[10px] uppercase tracking-[0.4em] text-[#c89b6a] mb-4">
+            Visit Us
+          </p>
+          <h2 class="font-serif text-4xl md:text-5xl italic">
+            Our Studio Location
+          </h2>
+        </div>
+
+        <!-- Map -->
+        <div class="w-full h-[450px]">
+          <iframe class="w-full h-full grayscale hover:grayscale-0 transition duration-700"
+            src="https://www.google.com/maps?q=Kochi,Kerala&output=embed" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-24 pb-12 px-6 relative overflow-hidden">
+
+    <div
+      class="absolute bottom-[%1] left-1/2 -translate-x-1/2 opacity-10 text-[8rem] md:text-[14rem] font-serif select-none pointer-events-none z-0 whitespace-nowrap">
+      OLAY
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+
+        <div>
+          <h2 class="font-serif text-3xl mb-6">OLAY<span class="text-[#c89b6a]">.</span></h2>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            A modern luxury beauty studio delivering precision, elegance and confidence through curated experiences.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Navigation</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="service.html" class="hover:text-white transition">Our Services</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Services</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li>Hair Styling</li>
+            <li>Bridal Makeup</li>
+            <li>Skin Rejuvenation</li>
+            <li>Botanical Facials</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Location</h4>
+          <p class="text-gray-400 text-sm mb-4">884Q+R4M Kadicheeni Complex, Main Rd, North Chalakudy, Chalakudy, Kerala
+            680307</p>
+          <p class="text-gray-400 text-sm">📞 0480 270 3735</p>
+          <p class="text-gray-400 text-sm">✉️ hello@olaystudio.com</p>
+        </div>
+      </div>
+
+      <div class="h-px bg-white/10 mb-8"></div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-widest font-medium">
+        <p>© 2026 OLAY Beauty Studio. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-[#c89b6a] transition">Instagram</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Pinterest</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/script.js"></script>
+
 </body>
+
 </html>

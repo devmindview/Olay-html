@@ -1,223 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luxury Beauty Parlour</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Beauty Studio | OLAY</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: #fffaf7; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-    
-    /* Modern Glossy Glassmorphism */
-    .glass {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-    }
-    
-    /* Image Reveal Animation */
-    .img-container { overflow: hidden; border-radius: 2rem; }
-    .img-container img { transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
-    .img-container:hover img { transform: scale(1.08); }
-
-    /* Custom Cursor / Smooth Transitions */
-    .hover-scale { transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-    .hover-scale:hover { transform: scale(1.02); }
-
-    /* Animated Background Blob */
-    .blob {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: linear-gradient(180deg, #fde2e4 0%, #fff1e6 100%);
-      filter: blur(80px);
-      border-radius: 50%;
-      z-index: -1;
-      animation: move 20s infinite alternate;
-    }
-    @keyframes move {
-      from { transform: translate(-10%, -10%); }
-      to { transform: translate(20%, 20%); }
-    }
-  </style>
 </head>
-<body class="text-[#2b2b2b] overflow-x-hidden">
 
-<div class="blob top-0 -left-20"></div>
-<div class="blob bottom-0 -right-20" style="animation-delay: -5s;"></div>
+<body>
 
-<nav class="fixed w-full z-50 px-6 py-4">
-  <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4 rounded-full shadow-sm">
-    <span class="font-serif text-2xl font-bold tracking-tighter">LUXE<span class="text-[#c89b6a]">.</span></span>
-    <div class="hidden md:flex gap-10 text-sm font-medium uppercase tracking-widest">
-      <a href="#services" class="hover:text-[#c89b6a] transition">Services</a>
-      <a href="#packages" class="hover:text-[#c89b6a] transition">Packages</a>
-      <a href="#contact" class="hover:text-[#c89b6a] transition">Contact</a>
-    </div>
-    <a href="#contact" class="bg-black text-white px-6 py-2 rounded-full text-xs uppercase tracking-widest hover:bg-[#c89b6a] transition">Book</a>
-  </div>
-</nav>
+  <nav id="main-nav" class="fixed w-full z-50 px-4 md:px-6 py-6 transition-all duration-500">
+    <div class="max-w-7xl mx-auto glass-card px-6 md:px-10 py-4 rounded-full border border-white/20 shadow-sm">
+      <div class="flex justify-between items-center">
 
-<section class="min-h-screen pt-32 pb-20 px-6 flex items-center">
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-    <div data-aos="fade-up" data-aos-duration="1000">
-      <h1 class="font-serif text-6xl md:text-8xl leading-[1.1] mb-8">
-        The Art of <br><span class="italic text-[#c89b6a]">Soft</span> Beauty.
-      </h1>
-      <p class="text-lg text-gray-600 mb-10 max-w-md leading-relaxed">
-        Experience a modern sanctuary where luxury meets tranquility. Your transformation, handled with botanical care.
-      </p>
-      <div class="flex gap-4">
-        <button class="bg-black text-white px-10 py-5 rounded-2xl hover-scale shadow-xl uppercase text-xs tracking-[0.2em]">Our Services</button>
-        <button class="border border-black px-10 py-5 rounded-2xl hover-scale uppercase text-xs tracking-[0.2em]">Inquiry</button>
+        <span class="font-serif text-2xl font-bold tracking-tighter">
+          <a href="#">OLAY</a><span class="text-[#c89b6a]">.</span>
+        </span>
+
+        <div class="hidden md:flex gap-10 text-[11px] font-semibold uppercase tracking-[0.2em]">
+          <a href="about.html" class="hover:text-[#c89b6a] transition">About</a>
+          <a href="service.html" class="hover:text-[#c89b6a] transition">Services</a>
+          <a href="contact.html" class="hover:text-[#c89b6a] transition">Contact</a>
+        </div>
+
+        <a href="#contact"
+          class="hidden md:inline-block bg-black text-white px-7 py-2.5 rounded-full text-[10px] uppercase tracking-widest hover:bg-[#c89b6a] transition shadow-lg">
+          Book Appointment
+        </a>
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu"
+        class="hidden md:hidden mt-6 bg-white rounded-2xl p-8 shadow-2xl space-y-6 text-center uppercase tracking-widest text-xs font-medium border border-gray-100">
+        <a href="about.html" class="block py-2 border-b border-gray-50">About</a>
+        <a href="service.html" class="block py-2 border-b border-gray-50">Services</a>
+        <a href="contact.html" class="block py-2 border-b border-gray-50">Contact</a>
+        <a href="#contact" class="inline-block bg-black text-white px-10 py-4 rounded-full w-full">Book Now</a>
       </div>
     </div>
-    
-    <div class="relative" data-aos="zoom-in" data-aos-duration="1500">
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-8 overflow-hidden rounded-[2rem] h-96 shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Beauty">
-        </div>
-        <div class="col-span-4 overflow-hidden rounded-[2rem] h-96 mt-12 shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Detail">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<section id="about" class="py-24 px-6 max-w-7xl mx-auto">
-  <div class="grid lg:grid-cols-12 gap-6">
-    <div class="lg:col-span-7 img-container h-[500px]" data-aos="zoom-in-right">
-      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Luxury Salon">
-    </div>
-    
-    <div class="lg:col-span-5 glass p-10 flex flex-col justify-center rounded-[2rem]" data-aos="fade-left">
-      <span class="text-[#c89b6a] uppercase tracking-[0.3em] text-xs font-bold mb-4">Our Philosophy</span>
-      <h2 class="font-serif text-4xl mb-6 leading-tight italic">Where Modern Science <br>Meets Timeless Art.</h2>
-      <p class="text-gray-600 leading-loose font-light">
-        We believe beauty is an intimate journey. Our studio is designed as a sanctuary—a place where clinical precision meets a soft, holistic atmosphere. Every detail is curated to make you feel extraordinary.
-      </p>
-      <div class="mt-8 grid grid-cols-2 gap-4">
-        <div class="border-l-2 border-[#fde2e4] pl-4">
-          <h4 class="font-serif text-xl">Certified</h4>
-          <p class="text-xs text-gray-400">Industry Experts</p>
-        </div>
-        <div class="border-l-2 border-[#fde2e4] pl-4">
-          <h4 class="font-serif text-xl">Premium</h4>
-          <p class="text-xs text-gray-400">Organic Products</p>
+  <section class="min-h-screen pt-32 pb-20 px-6 flex items-center bg-[#fffaf7] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-[#c89b6a]/5 rounded-l-full -mr-20 hidden lg:block"></div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div data-aos="fade-up" data-aos-duration="1200">
+        <span class="uppercase tracking-[0.4em] text-[10px] text-[#c89b6a] font-bold mb-4 block">Luxury Beauty
+          Studio</span>
+        <h1 class="font-serif text-6xl md:text-8xl leading-[1.05] mb-8">
+          The Art of <br><span class="italic text-[#c89b6a]">Soft</span> Beauty.
+        </h1>
+        <p class="text-lg text-gray-500 mb-10 max-w-md leading-relaxed">
+          Experience a modern sanctuary where luxury meets tranquility. Your transformation, handled with botanical
+          care.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button
+            class="bg-black text-white px-10 py-5 rounded-2xl hover-scale shadow-xl uppercase text-[10px] tracking-[0.2em]">Our
+            Services</button>
+          <button
+            class="border border-black px-10 py-5 rounded-2xl hover-scale uppercase text-[10px] tracking-[0.2em]">Book
+            Inquiry</button>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section id="services" class="py-24 bg-[#fff5f0]/50 relative overflow-hidden">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 opacity-[0.03] pointer-events-none">
-    <h2 class="text-[20rem] font-serif select-none">RITUALS</h2>
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="text-center mb-16">
-      <h2 class="font-serif text-5xl mb-4 italic" data-aos="fade-up">Curated Rituals</h2>
-      <p class="text-gray-400 text-sm tracking-[0.2em] uppercase" data-aos="fade-up" data-aos-delay="100">Elevating your natural essence</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="group relative pt-20" data-aos="fade-up" data-aos-delay="100">
-        <div class="glass p-8 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-4">
-          <div class="absolute -top-10 left-10 w-24 h-24 img-container shadow-xl">
-            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+      <div class="relative" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="grid grid-cols-12 gap-4">
+          <div class="col-span-8 overflow-hidden rounded-[2.5rem] h-[350px] md:h-[500px] shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80"
+              class="w-full h-full object-cover hero-bg-zoom" alt="Beauty">
           </div>
-          <h3 class="font-serif text-2xl mt-8 mb-4 italic">Bridal Artistry</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6">High-definition, long-wear makeup tailored to your unique radiance and wedding vision.</p>
-          <a href="#" class="text-[#c89b6a] text-xs uppercase tracking-widest font-bold">Discover More +</a>
-        </div>
-      </div>
-
-      <div class="group relative pt-20" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-black p-8 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-4 shadow-2xl">
-          <div class="absolute -top-10 left-10 w-24 h-24 img-container shadow-xl">
-            <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+          <div class="col-span-4 overflow-hidden rounded-[2.5rem] h-[350px] md:h-[500px] mt-12 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80"
+              class="w-full h-full object-cover" alt="Detail">
           </div>
-          <h3 class="font-serif text-2xl mt-8 mb-4 text-white italic">Skin Sculpting</h3>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6">Advanced facial rejuvenation rituals using botanical infusions and cold-stone therapy.</p>
-          <a href="#" class="text-[#c89b6a] text-xs uppercase tracking-widest font-bold">Discover More +</a>
-        </div>
-      </div>
-
-      <div class="group relative pt-20" data-aos="fade-up" data-aos-delay="300">
-        <div class="glass p-8 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-4">
-          <div class="absolute -top-10 left-10 w-24 h-24 img-container shadow-xl">
-            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
-          </div>
-          <h3 class="font-serif text-2xl mt-8 mb-4 italic">Architectural Hair</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6">Modern silhouette cutting and organic color blending for a effortless, high-fashion look.</p>
-          <a href="#" class="text-[#c89b6a] text-xs uppercase tracking-widest font-bold">Discover More +</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-24">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-10 rounded-[2rem] glass text-center hover:shadow-2xl transition" data-aos="fade-up">
-        <h3 class="font-serif text-xl mb-4">Basic</h3>
-        <p class="text-4xl font-bold mb-6">₹2,999</p>
-        <div class="h-px w-full bg-pink-100 mb-6"></div>
-        <button class="w-full py-3 rounded-full border border-black text-xs uppercase tracking-widest">Select</button>
+  <section id="about" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+      <div class="relative" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035"
+          class="w-full h-[500px] rounded-[3rem] object-cover shadow-xl">
+        <div class="absolute -bottom-6 -right-6 bg-white p-8 rounded-3xl shadow-2xl hidden md:block">
+          <p class="font-serif text-4xl text-[#c89b6a]">12+</p>
+          <p class="text-[10px] uppercase tracking-widest font-bold">Years Experience</p>
+        </div>
       </div>
-      <div class="p-10 rounded-[2rem] bg-gradient-to-br from-[#fde2e4] to-[#fff1e6] text-center shadow-2xl scale-105 border border-white" data-aos="fade-up" data-aos-delay="150">
-        <h3 class="font-serif text-xl mb-4 italic font-bold">Luxe Signature</h3>
-        <p class="text-4xl font-bold mb-6">₹6,999</p>
-        <div class="h-px w-full bg-white/50 mb-6"></div>
-        <button class="w-full py-3 rounded-full bg-black text-white text-xs uppercase tracking-widest">Most Popular</button>
-      </div>
-      <div class="p-10 rounded-[2rem] glass text-center hover:shadow-2xl transition" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="font-serif text-xl mb-4">Royal</h3>
-        <p class="text-4xl font-bold mb-6">₹12,999</p>
-        <div class="h-px w-full bg-pink-100 mb-6"></div>
-        <button class="w-full py-3 rounded-full border border-black text-xs uppercase tracking-widest">Select</button>
+
+      <div data-aos="fade-left">
+        <span class="uppercase tracking-widest text-xs text-[#c89b6a] font-bold">Our Philosophy</span>
+        <h2 class="font-serif text-4xl md:text-5xl mt-6 mb-8 leading-tight">Crafted for Modern <br>Elegant Women</h2>
+        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+          We blend modern techniques with timeless elegance, delivering precision and luxury in every service. Our
+          studio is designed to be your private retreat from the digital noise.
+        </p>
+        <ul class="space-y-4 mb-10">
+          <li class="flex items-center gap-4 text-sm font-medium"><span
+              class="w-2 h-2 bg-[#c89b6a] rounded-full"></span> Organic & Botanical Products</li>
+          <li class="flex items-center gap-4 text-sm font-medium"><span
+              class="w-2 h-2 bg-[#c89b6a] rounded-full"></span> Certified Expert Stylists</li>
+          <li class="flex items-center gap-4 text-sm font-medium"><span
+              class="w-2 h-2 bg-[#c89b6a] rounded-full"></span> Personalized Beauty Consultations</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
-  <div class="glass p-12 rounded-[3rem] shadow-2xl" data-aos="fade-up">
-    <h2 class="font-serif text-4xl text-center mb-10 italic">Secure Your Session</h2>
-    <form class="grid gap-6">
-      <div class="grid md:grid-cols-2 gap-6">
-        <input type="text" placeholder="Name" class="p-5 rounded-2xl bg-white/50 border-none focus:ring-2 focus:ring-[#fde2e4] shadow-inner"/>
-        <input type="text" placeholder="Phone" class="p-5 rounded-2xl bg-white/50 border-none focus:ring-2 focus:ring-[#fde2e4] shadow-inner"/>
+  <section id="services" class="py-20 sm:py-28 md:py-36 bg-[#0f0f0f] text-white relative overflow-hidden px-4 sm:px-6">
+
+    <!-- Decorative Text (hide on mobile) -->
+    <div
+      class="hidden md:block absolute top-20 left-1/2 -translate-x-1/2 opacity-5 text-[10rem] lg:text-[14rem] font-serif select-none">
+      SERVICES
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto">
+
+      <!-- Heading -->
+      <div class="max-w-2xl mb-16 sm:mb-20 md:mb-24" data-aos="fade-up">
+        <span class="uppercase tracking-[0.25em] sm:tracking-[0.35em] text-xs text-yellow-600">
+          What We Do
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl mt-6 leading-tight">
+          Signature Beauty <br>Experiences
+        </h2>
       </div>
-      <input type="text" placeholder="Preferred Service" class="p-5 rounded-2xl bg-white/50 border-none focus:ring-2 focus:ring-[#fde2e4] shadow-inner"/>
-      <textarea placeholder="Special Requests" class="p-5 rounded-2xl bg-white/50 border-none focus:ring-2 focus:ring-[#fde2e4] shadow-inner" rows="4"></textarea>
-      <button class="px-8 py-5 rounded-2xl bg-black text-white hover:bg-[#c89b6a] transition shadow-xl uppercase tracking-widest text-xs font-bold">
-        Send Reservation Request
-      </button>
-    </form>
-  </div>
-</section>
 
-<footer class="py-12 text-center bg-white">
-  <p class="font-serif text-2xl tracking-widest">LUXÉ</p>
-  <div class="h-px w-20 bg-[#c89b6a] mx-auto my-4"></div>
-  <p class="text-xs text-gray-400 mt-2 uppercase tracking-[0.3em]">© 2026 Luxury Beauty Parlour</p>
-</footer>
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, easing: 'ease-out-cubic' });
-</script>
+        <!-- Card 1 -->
+        <div class="group relative h-[360px] sm:h-[420px] md:h-[460px] overflow-hidden rounded-3xl" data-aos="fade-up">
+
+          <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+          <div class="absolute bottom-0 p-6 sm:p-8 transition-all duration-500 sm:group-hover:bottom-6">
+
+            <span class="text-yellow-600 text-sm font-semibold">01</span>
+
+            <h3 class="font-serif text-2xl sm:text-3xl mt-3 mb-3 sm:mb-4">
+              Hair Studio
+            </h3>
+
+            <!-- Always visible on mobile -->
+            <p
+              class="text-gray-300 text-sm leading-relaxed opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-500">
+              Precision cuts, creative styling and premium hair treatments tailored to you.
+            </p>
+
+            <a href="#"
+              class="inline-block mt-4 sm:mt-6 uppercase tracking-widest text-xs text-yellow-600 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition">
+              Explore Service →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group relative h-[360px] sm:h-[420px] md:h-[460px] overflow-hidden rounded-3xl" data-aos="fade-up"
+          data-aos-delay="150">
+
+          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+          <div class="absolute bottom-0 p-6 sm:p-8 transition-all duration-500 sm:group-hover:bottom-6">
+
+            <span class="text-yellow-600 text-sm font-semibold">02</span>
+
+            <h3 class="font-serif text-2xl sm:text-3xl mt-3 mb-3 sm:mb-4">
+              Skin Care
+            </h3>
+
+            <p
+              class="text-gray-300 text-sm leading-relaxed opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-500">
+              Advanced facials, glow therapies and skin rejuvenation rituals.
+            </p>
+
+            <a href="#"
+              class="inline-block mt-4 sm:mt-6 uppercase tracking-widest text-xs text-yellow-600 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition">
+              Explore Service →
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group relative h-[360px] sm:h-[420px] md:h-[460px] overflow-hidden rounded-3xl" data-aos="fade-up"
+          data-aos-delay="300">
+
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+          <div class="absolute bottom-0 p-6 sm:p-8 transition-all duration-500 sm:group-hover:bottom-6">
+
+            <span class="text-yellow-600 text-sm font-semibold">03</span>
+
+            <h3 class="font-serif text-2xl sm:text-3xl mt-3 mb-3 sm:mb-4">
+              Makeup Artistry
+            </h3>
+
+            <p
+              class="text-gray-300 text-sm leading-relaxed opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-500">
+              Bridal, editorial and event makeup crafted to perfection.
+            </p>
+
+            <a href="#"
+              class="inline-block mt-4 sm:mt-6 uppercase tracking-widest text-xs text-yellow-600 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition">
+              Explore Service →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="py-24 bg-gray-50 px-6">
+    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+      <h2 class="font-serif text-5xl mb-12">Book Your Visit</h2>
+      <form class="grid gap-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Your Name"
+            class="p-5 rounded-2xl border border-gray-200 focus:outline-none focus:border-[#c89b6a] bg-white">
+          <input type="email" placeholder="Email Address"
+            class="p-5 rounded-2xl border border-gray-200 focus:outline-none focus:border-[#c89b6a] bg-white">
+        </div>
+        <select
+          class="p-5 rounded-2xl border border-gray-200 focus:outline-none focus:border-[#c89b6a] bg-white text-gray-500">
+          <option>Select Service</option>
+          <option>Hair Styling</option>
+          <option>Skin Care</option>
+          <option>Makeup</option>
+        </select>
+        <textarea rows="4" placeholder="Special Requests"
+          class="p-5 rounded-2xl border border-gray-200 focus:outline-none focus:border-[#c89b6a] bg-white"></textarea>
+        <button
+          class="bg-black text-white py-5 rounded-2xl uppercase tracking-widest text-[10px] font-bold hover:bg-[#c89b6a] transition-all shadow-xl">
+          Confirm Appointment
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white pt-24 pb-12 px-6 relative overflow-hidden">
+
+    <div
+      class="absolute bottom-[%1] left-1/2 -translate-x-1/2 opacity-10 text-[8rem] md:text-[14rem] font-serif select-none pointer-events-none z-0 whitespace-nowrap">
+      OLAY
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+
+        <div>
+          <h2 class="font-serif text-3xl mb-6">OLAY<span class="text-[#c89b6a]">.</span></h2>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            A modern luxury beauty studio delivering precision, elegance and confidence through curated experiences.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Navigation</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="service.html" class="hover:text-white transition">Our Services</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Services</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li>Hair Styling</li>
+            <li>Bridal Makeup</li>
+            <li>Skin Rejuvenation</li>
+            <li>Botanical Facials</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Location</h4>
+          <p class="text-gray-400 text-sm mb-4">884Q+R4M Kadicheeni Complex, Main Rd, North Chalakudy, Chalakudy, Kerala 680307</p>
+          <p class="text-gray-400 text-sm">📞 0480 270 3735</p>
+          <p class="text-gray-400 text-sm">✉️ hello@olaystudio.com</p>
+        </div>
+      </div>
+
+      <div class="h-px bg-white/10 mb-8"></div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-widest font-medium">
+        <p>© 2026 OLAY Beauty Studio. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-[#c89b6a] transition">Instagram</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Pinterest</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="/script.js"></script>
 
 </body>
+
 </html>

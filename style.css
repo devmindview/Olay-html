@@ -1,0 +1,88 @@
+   /* COMMON STYLES */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* NAVBAR STYLES */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Triggered by JS after 100vh */
+    .nav-scrolled .glass-card {
+      background: #ffffff;
+      border-radius: 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .nav-scrolled {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* ANIMATIONS */
+    .hero-bg-zoom {
+      animation: heroZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+
+
+    /* About Page */
+
+    /* Soft Animated Background */
+    .blob-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, #fde2e4 0%, #fff1e6 100%);
+      filter: blur(120px);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: drift 30s infinite alternate ease-in-out;
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate(-20%, -20%) scale(1);
+      }
+
+      to {
+        transform: translate(10%, 10%) scale(1.1);
+      }
+    }
+
+

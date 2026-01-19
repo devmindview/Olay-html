@@ -1,171 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Philosophy | LUXÉ Modern Beauty</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background-color: #fffaf7; color: #2b2b2b; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-    
-    /* ULTRA BLUR HEADER (Same as your selection) */
-    .header-blur {
-      background: rgba(255, 250, 247, 0.4);
-      backdrop-filter: blur(25px) saturate(180%);
-      -webkit-backdrop-filter: blur(25px) saturate(180%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .glass {
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-    }
-
-    /* Soft Animated Background */
-    .blob-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-    .blob {
-      position: absolute;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, #fde2e4 0%, #fff1e6 100%);
-      filter: blur(120px);
-      border-radius: 50%;
-      opacity: 0.5;
-      animation: drift 30s infinite alternate ease-in-out;
-    }
-
-    @keyframes drift {
-      from { transform: translate(-20%, -20%) scale(1); }
-      to { transform: translate(10%, 10%) scale(1.1); }
-    }
-  </style>
 </head>
+
 <body class="antialiased">
 
-<div class="blob-bg">
+  <div class="blob-bg">
     <div class="blob"></div>
-</div>
-
-<nav class="fixed w-full z-[100] px-6 py-5">
-  <div class="max-w-7xl mx-auto flex justify-between items-center header-blur px-10 py-4 rounded-full shadow-lg">
-    <a href="index.html" class="font-serif text-2xl font-bold tracking-tighter">LUXÉ<span class="text-[#c89b6a]">.</span></a>
-    <div class="hidden md:flex gap-12 text-[11px] font-semibold uppercase tracking-[0.3em]">
-      <a href="index.html#about" class="hover:text-[#c89b6a] transition">Home</a>
-      <a href="#vision" class="hover:text-[#c89b6a] transition">Vision</a>
-      <a href="#team" class="hover:text-[#c89b6a] transition">Artists</a>
-    </div>
-    <a href="index.html#contact" class="bg-black text-white px-8 py-2.5 rounded-full text-[10px] uppercase tracking-widest hover:bg-[#c89b6a] transition">Reserve</a>
   </div>
-</nav>
 
-<header class="pt-56 pb-20 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-        <span class="text-[#c89b6a] uppercase tracking-[0.5em] text-xs font-bold mb-6 block" data-aos="fade-up">Our Identity</span>
-        <h1 class="font-serif text-6xl md:text-8xl italic leading-tight" data-aos="fade-up" data-aos-delay="200">The Soul Behind <br>the Glow</h1>
+  <nav id="main-nav" class="fixed w-full z-50 px-4 md:px-6 py-6 transition-all duration-500">
+    <div class="max-w-7xl mx-auto glass-card px-6 md:px-10 py-4 rounded-full border border-white/20 shadow-sm">
+      <div class="flex justify-between items-center">
+
+        <span class="font-serif text-2xl font-bold tracking-tighter">
+          <a href="#">OLAY</a><span class="text-[#c89b6a]">.</span>
+        </span>
+
+        <div class="hidden md:flex gap-10 text-[11px] font-semibold uppercase tracking-[0.2em]">
+          <a href="index.html" class="hover:text-[#c89b6a] transition">Home</a>
+          <a href="about.html" class="hover:text-[#c89b6a] transition">About</a>
+          <a href="service.html" class="hover:text-[#c89b6a] transition">Services</a>
+          <a href="contact.html" class="hover:text-[#c89b6a] transition">Contact</a>
+        </div>
+
+        <a href="#contact"
+          class="hidden md:inline-block bg-black text-white px-7 py-2.5 rounded-full text-[10px] uppercase tracking-widest hover:bg-[#c89b6a] transition shadow-lg">
+          Book Appointment
+        </a>
+
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="mobile-menu"
+        class="hidden md:hidden mt-6 bg-white rounded-2xl p-8 shadow-2xl space-y-6 text-center uppercase tracking-widest text-xs font-medium border border-gray-100">
+        <a href="index.html" class="block py-2 border-b border-gray-50">Home</a>
+        <a href="about.html" class="block py-2 border-b border-gray-50">About</a>
+        <a href="service.html" class="block py-2 border-b border-gray-50">Services</a>
+        <a href="contact.html" class="block py-2 border-b border-gray-50">Contact</a>
+        <a href="#contact" class="inline-block bg-black text-white px-10 py-4 rounded-full w-full">Book Now</a>
+      </div>
     </div>
-</header>
+  </nav>
 
-<section class="py-20 px-6 max-w-7xl mx-auto" id="vision">
-    <div class="grid lg:grid-cols-12 gap-6">
-        <div class="lg:col-span-8 glass p-12 md:p-20 rounded-[3rem] shadow-sm flex flex-col justify-center" data-aos="fade-right">
-            <h2 class="font-serif text-4xl mb-8 italic">A Sanctuary for the Senses</h2>
-            <p class="text-gray-500 text-lg leading-relaxed font-light mb-8 italic">
-                Founded in 2026, LUXÉ was born out of a desire to bridge the gap between clinical aesthetics and soulful wellness. We believe that when you look your best, you carry a different energy into the world.
-            </p>
-            <p class="text-gray-500 leading-loose font-light">
-                Our approach is minimalist but intentional. We don't believe in masking features; we believe in sculpting them. By using only sustainably sourced, high-performance botanical ingredients, we ensure your beauty ritual is as kind to the earth as it is to your skin.
-            </p>
+
+  <!-- ABOUT HERO SECTION -->
+  <section class="relative min-h-[100vh] flex items-center px-6 overflow-hidden">
+
+    <!-- Background Accent -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#c89b6a]/20 via-[#fffaf7] to-white"></div>
+
+    <!-- Decorative Shape -->
+    <div class="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-[#c89b6a]/20 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+
+      <!-- LEFT CONTENT -->
+      <div data-aos="fade-right">
+
+        <span class="uppercase tracking-[0.45em] text-xs text-[#c89b6a] font-semibold block mb-8">
+          About Us
+        </span>
+
+        <h1 class="font-serif text-6xl md:text-7xl italic leading-tight mb-10">
+          Where Beauty <br>
+          Becomes <span class="text-[#c89b6a]">Art</span>
+        </h1>
+
+        <p class="text-gray-500 leading-relaxed max-w-xl mb-12">
+          At LUXÉ, beauty is not rushed or replicated.
+          It is carefully sculpted through precision,
+          intention, and elevated artistry.At LUXÉ, beauty is not rushed or replicated.
+          It is carefully sculpted through precision,
+          intention, and elevated artistry.At LUXÉ, beauty is not rushed or replicated.
+          It is carefully sculpted through precision,
+          intention, and elevated artistry.
+        </p>
+
+        <div class="flex gap-6">
+          <a href="#story" class="bg-black text-white px-10 py-4 rounded-full text-[10px]
+                  uppercase tracking-[0.35em] hover:bg-[#c89b6a]
+                  transition-all duration-500">
+            Our Story
+          </a>
+
+          <a href="#team" class="border border-black px-10 py-4 rounded-full text-[10px]
+                  uppercase tracking-[0.35em] hover:border-[#c89b6a]
+                  hover:text-[#c89b6a] transition-all duration-500">
+            Meet Experts
+          </a>
         </div>
 
-        <div class="lg:col-span-4 h-[400px] lg:h-auto rounded-[3rem] overflow-hidden shadow-2xl" data-aos="fade-left">
-            <img src="https://images.unsplash.com/photo-1527799822340-304cf647594c?auto=format&fit=crop&q=80" class="w-full h-full object-cover hover:scale-110 transition-transform duration-[2s]" alt="Beauty Artistry">
-        </div>
+      </div>
 
-        <div class="lg:col-span-4 bg-black text-white p-12 rounded-[3rem] shadow-xl text-center flex flex-col justify-center" data-aos="fade-up">
-            <h3 class="font-serif text-5xl mb-2">12+</h3>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400">Awards for Innovation</p>
-        </div>
+      <!-- RIGHT IMAGE -->
+      <div class="relative h-[560px] rounded-[3.5rem] overflow-hidden shadow-2xl" data-aos="fade-left">
 
-        <div class="lg:col-span-4 bg-[#fde2e4] p-12 rounded-[3rem] shadow-sm text-center flex flex-col justify-center" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="font-serif text-5xl mb-2 italic">100%</h3>
-            <p class="text-[10px] uppercase tracking-widest text-[#c89b6a]">Cruelty-Free Products</p>
-        </div>
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80"
+          alt="Luxury Beauty Studio"
+          class="w-full h-full object-cover hover:scale-110 transition-transform duration-[2s]" />
 
-        <div class="lg:col-span-4 glass p-12 rounded-[3rem] shadow-sm text-center flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="font-serif text-5xl mb-2">5k+</h3>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400">Confident Souls Transformed</p>
-        </div>
+        <!-- Image Overlay -->
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+
     </div>
-</section>
+  </section>
 
-<section id="team" class="py-32 px-6 bg-white/30 backdrop-blur-md">
+
+  <section id="team" class="py-20 px-6 bg-white/30 backdrop-blur-md">
     <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="font-serif text-5xl italic mb-6">Master Artists</h2>
-            <div class="h-px w-24 bg-[#c89b6a] mx-auto"></div>
+      <div class="text-center mb-20">
+        <h2 class="font-serif text-5xl italic mb-6">Master Artists</h2>
+        <div class="h-px w-24 bg-[#c89b6a] mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="group" data-aos="fade-up">
+          <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?auto=format&fit=crop&q=80"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Lead Stylist">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+          </div>
+          <h4 class="font-serif text-2xl italic">Elena Rose</h4>
+          <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Lead Esthetician</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="group" data-aos="fade-up">
-                <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Lead Stylist">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                <h4 class="font-serif text-2xl italic">Elena Rose</h4>
-                <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Lead Esthetician</p>
-            </div>
-
-            <div class="group" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Lead Artist">
-                </div>
-                <h4 class="font-serif text-2xl italic">Julian Vane</h4>
-                <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Creative Director</p>
-            </div>
-
-            <div class="group" data-aos="fade-up" data-aos-delay="400">
-                <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Colorist">
-                </div>
-                <h4 class="font-serif text-2xl italic">Sophia Chen</h4>
-                <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Master Colorist</p>
-            </div>
+        <div class="group" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Lead Artist">
+          </div>
+          <h4 class="font-serif text-2xl italic">Julian Vane</h4>
+          <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Creative Director</p>
         </div>
+
+        <div class="group" data-aos="fade-up" data-aos-delay="400">
+          <div class="relative overflow-hidden rounded-[2.5rem] h-[450px] mb-8 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&q=80"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              alt="Colorist">
+          </div>
+          <h4 class="font-serif text-2xl italic">Sophia Chen</h4>
+          <p class="text-xs text-[#c89b6a] uppercase tracking-widest mt-2">Master Colorist</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="py-32 text-center px-6">
+  <section class="py-32 text-center px-6">
     <div class="max-w-3xl mx-auto glass p-16 rounded-[4rem] shadow-2xl" data-aos="zoom-in">
-        <h2 class="font-serif text-5xl mb-8 italic">Ready to meet your best self?</h2>
-        <p class="text-gray-500 mb-10 font-light">Spaces are limited. Our artists dedicate focused time to every guest to ensure an extraordinary result.</p>
-        <a href="index.html#contact" class="inline-block bg-black text-white px-12 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] hover:bg-[#c89b6a] hover:px-16 transition-all duration-500">Begin Your Journey</a>
+      <h2 class="font-serif text-5xl mb-8 italic">Ready to meet your best self?</h2>
+      <p class="text-gray-500 mb-10 font-light">Spaces are limited. Our artists dedicate focused time to every guest to
+        ensure an extraordinary result.</p>
+      <a href="index.html#contact"
+        class="inline-block bg-black text-white px-12 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] hover:bg-[#c89b6a] hover:px-16 transition-all duration-500">Begin
+        Your Journey</a>
     </div>
-</section>
+  </section>
 
-<footer class="py-12 text-center">
-  <p class="font-serif text-2xl font-bold tracking-tighter">LUXÉ<span class="text-[#c89b6a]">.</span></p>
-  <p class="text-[9px] text-gray-400 uppercase tracking-[0.5em] mt-4">© 2026 LUXÉ BEAUTY • BEYOND AESTHETICS</p>
-</footer>
+  <!-- FOOTER -->
+  <footer class="bg-black text-white pt-24 pb-12 px-6 relative overflow-hidden">
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, duration: 1200, easing: 'ease-out-quint' });
-</script>
+    <div
+      class="absolute bottom-[%1] left-1/2 -translate-x-1/2 opacity-10 text-[8rem] md:text-[14rem] font-serif select-none pointer-events-none z-0 whitespace-nowrap">
+      OLAY
+    </div>
 
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+
+        <div>
+          <h2 class="font-serif text-3xl mb-6">OLAY<span class="text-[#c89b6a]">.</span></h2>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            A modern luxury beauty studio delivering precision, elegance and confidence through curated experiences.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Navigation</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+            <li><a href="service.html" class="hover:text-white transition">Our Services</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Services</h4>
+          <ul class="space-y-4 text-sm text-gray-400">
+            <li>Hair Styling</li>
+            <li>Bridal Makeup</li>
+            <li>Skin Rejuvenation</li>
+            <li>Botanical Facials</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="uppercase tracking-widest text-[10px] font-bold mb-8 text-[#c89b6a]">Location</h4>
+          <p class="text-gray-400 text-sm mb-4">884Q+R4M Kadicheeni Complex, Main Rd, North Chalakudy, Chalakudy, Kerala 680307</p>
+          <p class="text-gray-400 text-sm">📞 0480 270 3735</p>
+          <p class="text-gray-400 text-sm">✉️ hello@olaystudio.com</p>
+        </div>
+      </div>
+
+      <div class="h-px bg-white/10 mb-8"></div>
+
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-gray-500 uppercase tracking-widest font-medium">
+        <p>© 2026 OLAY Beauty Studio. All rights reserved.</p>
+        <div class="flex gap-8">
+          <a href="#" class="hover:text-[#c89b6a] transition">Instagram</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Pinterest</a>
+          <a href="#" class="hover:text-[#c89b6a] transition">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="/script.js"></script>
 </body>
+
 </html>
