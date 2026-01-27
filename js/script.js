@@ -32,3 +32,26 @@
         navbar.classList.remove("nav-scrolled");
       }
     });
+
+
+// Scroll to Top Button
+window.addEventListener('scroll', () => {
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    const scrollTopBtn = document.getElementById('scroll-top');
+    const vh100 = window.innerHeight;
+
+    if (window.scrollY > vh100) {
+        // We scrolled past 100vh
+        scrollTopBtn.classList.add('show');
+        scrollTopBtn.classList.remove('translate-y-10');
+        
+        // Add a class to the wrapper or animate WhatsApp up
+        whatsappBtn.parentElement.classList.add('scrolled');
+    } else {
+        // We are at the top
+        scrollTopBtn.classList.remove('show');
+        scrollTopBtn.classList.add('translate-y-10');
+        
+        whatsappBtn.parentElement.classList.remove('scrolled');
+    }
+});
